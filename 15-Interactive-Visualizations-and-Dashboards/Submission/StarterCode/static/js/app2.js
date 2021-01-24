@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     doWork();
     //Event Listener
@@ -7,17 +6,36 @@ $(document).ready(function(){
 function doWork() {
     d3.json("samples.json").then(function(data) {
         console.log(data);
-        //makeBarChart(data);
-        //makeBubbleChart(data);
-        //makeGaugeChart(data);
-        //makePanel();
-        makePlots(data);
+        makePanel();
+        makePlots();
 })}
 
+
 function makePlots(data) {
+  //add in each chart
   makeBarChart(data);
   makeBubbleChart(data);
   makeGaugeChart(data);
+}
+
+function makePanel(data){
+  //populate dropdown
+    data.names.forEach(function(val) {
+      var newOption = `<option>${val}</option>`;
+      $('#selDataset').append(newOption);
+    });
+
+    //grab first name in dropdown
+    var sample = parseInt($('#selDataset').val());
+
+    //filter the matadata
+    var metadata = data.metadata.filter(x => x.id === sample)[0]; //strict euqality also checking value type
+
+    //build that div
+    Object.entries(metadata).forEach(function(key_value, index){
+      var entry = `<span><b>${key_value[0]}: </b> ${key_value[1]}</span><br>`;
+      $("#sample-metadata").append(entry);
+    })
 }
 
 function makeBarChart(data) {
@@ -27,10 +45,10 @@ function makeBarChart(data) {
     y: data.samples[0].otu_ids.slice(0,10).reverse().map(otuID => `OTU ${otuID}`),
     orientation: 'h',
     marker: {
-      color: 'rgb(217, 35, 15)',
+      color: 'rgb(158,202,225)',
       opacity: 0.6,
       line: {
-        color: 'rgb(139, 0, 0)',
+        color: 'rgb(8,48,107)',
         width: 1.5
       }
     },
@@ -42,8 +60,8 @@ function makeBarChart(data) {
   
   var layout = {
     title: 'Top 10 OTUs',
-    xaxis: {title: "Amount of Bacteria Present (No. of Reads)"},
-    yaxis: {title: "Bacteria (OTU) ID"}
+    //xaxis: {title: "Amount of Bacteria- FIND UNIT"},
+    //yaxis: {title: "Bacteria ID"}
   };
   
   Plotly.newPlot('bar', data, layout);
@@ -65,11 +83,10 @@ function makeBubbleChart (data) {
   var data = [trace1];
   
   var layout = {
-    title: 'Total Number and Amount of Bacteria Species Found Per Individual',
+    title: 'Each Sample Bubble Chart',
     showlegend: false,
     height: 600,
     width: 1000,
-    yaxis: {title: "Amount of Bacteria Present (No. of Reads)"},
     xaxis: {
       title: {
         text:'OTU ID',
@@ -79,44 +96,38 @@ function makeBubbleChart (data) {
 }
 
 function makeGaugeChart(data) {
-  //var setMax = d3.max(Array.from(mySet.values()));
-  //var max_freq = d3.max(Array.from((data.metadata[0].wfreq).values()));
-  var max_wfreq = Math.max.apply(Math, [data.metadata[0].wfreq].map(function(x) { return x.wfreq; }))
-  //var max_wfreq = Math.max(data.metadata.map(x => +x.wfreq).filter(x => (x) | x == 0));
-  //var max_wfreq = 10;
-
-  var data = [
+  var trace = [
     {
       domain: { x: [0, 1], y: [0, 1] },
       value: data.metadata[0].wfreq,
       title: { text: "Belly Button Washing Frequency" },
       type: "indicator",
-      mode: "gauge+number",
       gauge: {
-        axis: { range: [null, max_wfreq], tickwidth: 1, tickcolor: "#d9230f" },
-        bar: { color: "#d9230f" },
-        bgcolor: "white",
-        borderwidth: 2,
-        bordercolor: "gray",
-        // steps: [
-        //   { range: [0, 250], color: "cyan" },
-        //   { range: [250, 400], color: "royalblue" }
-        // ],
+        axis: {range: [null, 10]},
+        steps: [
+          {range: [0,7], color: "lightgray"},
+          {range: [7,10], color: "gray"}
+        ],
         threshold: {
-          line: { color: "red", width: 4 },
+          line: {color: "read", width: 4},
           thickness: 0.75,
-          value: 490
+          value: 2
         }
-      }
+      },
+      mode: "gauge+number"
     }
   ];
+
+  var data = [trace];
   
   var layout = { 
     width: 600, 
     height: 500, 
-    margin: { t: 0, b: 0 } 
+    margin: { t: 0, b: 0 },
   };
-  
+
   Plotly.newPlot('gauge', data, layout);
 }
+
+
 
