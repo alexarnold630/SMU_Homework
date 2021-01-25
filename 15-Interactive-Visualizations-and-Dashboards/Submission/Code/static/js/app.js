@@ -5,7 +5,7 @@ $(document).ready(function(){
 
     //Event Listener
     $('#selDataset').change(function() {
-      doWork();
+        displaySubject();
     });
 });
 
@@ -17,11 +17,11 @@ function onInit() {
         study_data = data;
         //build
         makeFilters(data);
-        doWork();
+        displaySubject();
 })}
 
 //Launch with Subject ID Change
-function doWork() {
+function displaySubject() {
     // grab name (subject ID)
     var sample = parseInt($("#selDataset").val());
 
@@ -82,7 +82,7 @@ function makeBarChart(sample_data) {
     var data = [trace1];
 
     var layout = {
-        title: 'Top 10 OTUs',
+        title: '<b>Top 10 OTUs<b>',
         xaxis: {title: "Amount of Bacteria Present (No. of Reads)"},
         yaxis: {title: "Bacteria (OTU) ID"}
     };
@@ -106,7 +106,7 @@ function makeBubbleChart(sample_data) {
     var data = [trace1];
 
     var layout = {
-        title: 'Total Number and Amount of Bacteria Species',
+        title: '<b>Total Number and Amount of Bacteria Species<b>',
         showlegend: false,
         height: 600,
         width: 1000,
@@ -128,7 +128,7 @@ function makeGaugeChart(metadata) {
         {
         domain: { x: [0, 1], y: [0, 1] },
         value: metadata.wfreq,
-        title: { text: "Belly Button Washing Frequency" },
+        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week" },
         type: "indicator",
         mode: "gauge+number",
         gauge: {
