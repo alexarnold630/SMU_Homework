@@ -10,17 +10,13 @@
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./static/js/app.js"></script>
-  <!--<script src="./static/js/bonus.js"></script>-->
-  <!--<script src="samples.json"></script>-->
+
 </head>
 
 <body>
-
-  <!--ADD DROPDOWN-->
 
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -59,13 +55,13 @@
       </div>
     </div>
 
-    <div class = "container-fluid">
+    <div class = "container-fluid" id="plots">
       <div class="row">
         <div class="col-md-2">
           <div class="card text-white bg-dark mb-3"style="max-width: 20rem;">
             <div class="card-header">Test Subject ID No.: </div>
             <div class="card-body">
-              <h4 class="card-title"><select id="selDataset" onchange="optionChanged(this.value)"></select></h4>
+              <h4 class="card-title"><select id="selDataset"></select></h4>
               <p class="card-text">Select a test subject ID to learn more about that individual's demographic information.</p>
             </div>
           </div>
@@ -73,7 +69,6 @@
           <div class="card border-dark mb-3">
             <div class="card-header">Demographic Info</div>
             <div id="sample-metadata" class="card-body"></div>
-            
           </div>
         </div>
         <div class="col-md-5">
@@ -84,7 +79,9 @@
         </div>
       </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class= "col-md-2">
+      </div>
+      <div class="col-md-10">
         <div id="bubble"></div>
       </div>
     </div>
