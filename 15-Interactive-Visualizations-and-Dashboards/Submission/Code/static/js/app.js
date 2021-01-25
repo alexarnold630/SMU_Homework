@@ -132,15 +132,15 @@ function makeGaugeChart(metadata) {
         type: "indicator",
         mode: "gauge+number",
         gauge: {
-            axis: { range: [null, max_wfreq], tickwidth: 1, tickcolor: "#d9230f" },
+            axis: { range: [null, max_wfreq]},
             bar: { color: "#d9230f" },
             bgcolor: "white",
             borderwidth: 2,
             bordercolor: "gray",
             threshold: {
-            line: { color: "red", width: 4 },
-            thickness: 0.75,
-            value: 490
+                line: { color: "red", width: 4 },
+                thickness: 0.75,
+                value: metadata.wfreq
             }
         }
         }
