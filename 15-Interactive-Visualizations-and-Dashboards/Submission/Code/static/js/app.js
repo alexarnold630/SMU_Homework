@@ -23,13 +23,13 @@ function onInit() {
 //Launch with Subject ID Change
 function displaySubject() {
     // grab name (subject ID)
-    var sample = parseInt($("#selDataset").val());
+    var subject = parseInt($("#selDataset").val());
 
     // filter the metadata
-    var metadata = study_data.metadata.filter(x => x.id === sample)[0];
+    var metadata = study_data.metadata.filter(x => x.id === subject)[0];
 
     // filter the sample data 
-    var sample_data = study_data.samples.filter(x => x.id == sample)[0];
+    var sample_data = study_data.samples.filter(x => x.id == subject)[0];
 
     //build
     makeDemoInfo(metadata);
