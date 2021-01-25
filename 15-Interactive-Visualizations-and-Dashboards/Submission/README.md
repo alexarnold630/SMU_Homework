@@ -12,7 +12,11 @@ Build an interactive dashboard to explore the Belly Button Biodiversity dataset,
 6. Display each key-value pair from the metadata JSON object somewhere on the page.
 7. Update all of the plots any time that a new sample is selected.
 
+https://alexarnold630.github.io/SMU_Homework//15-Interactive-Visualizations-and-Dashboards/Submission/Code/index.html
+
 ### About the Data
 Hulcr, J. et al.(2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. Retrieved from: http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/
+
+
 
 
