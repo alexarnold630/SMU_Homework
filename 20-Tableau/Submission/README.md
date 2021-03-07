@@ -48,32 +48,32 @@ A Tableau story consisting of 2 Dashboards investigating the Rides Over the Year
 ### When are Citi Bike Riders riding?
 Riders are overwhelmingly using this service out in the summer season, which is understandable as the weather influences the usability of this service. What was interesting is that September is the month that holds the most rides. This may be due to school starting back up or increased activity during the Labor Day holiday weekend. Further investigation would be interesting to understand this increased activity.
 
-!(Images/rides_by_season.png)
+![Citi-Bikes](Images/rides_by_season.png)
 
 Peak hours show high spikes between 8am-9am and an even higher spike between 5pm-6pm.  This is most likely due to alignment with work schedules with most people getting to work between 8am and 9am and finishing work beginning at 5pm.
 
-!(Images/peak_hours.png)
+![Citi-Bikes](Images/peak_hours.png)
 
 ### Who are Citi Bike Riders?
 Citi Bike Subscribers, those who purchase an annual subscriber, are the majority users versus Citi Bike Customers, those who purchase 24-hour or 3-day passes.
 
-!(Images/user_type.png)
+![Citi-Bikes](Images/user_type.png)
 
 Males make up the overwhelming majority of Citi Bike users month over month.  What is interesting to note is that while makes make more trips, females actually ride longer on average than males. Females ride approximately 100 seconds, close to 2 minutes, longer than males.
 
-!(Images/gender.png)
+![Citi-Bikes](Images/gender.png)
 
 Birth year and therefore age influence ridership.  A variety of ages use Citi Bike bikes yet there is a large peak for users born in 1989 both both male and female riders.  
 
-!(Images/rides_birth.png)
+![Citi-Bikes](Images/rides_birth.png)
 
 ### Where are Citi Bike Riders starting and ending their rides?
 The Perishing Square North location is the most popular station to begin and end a ride at any time of year. This is most likely due to its proximity to Grand Central Station.  Due to its commuter traffic with individuals, Grand Central Station brings individuals to the city to work.  And it appears these individuals are using the Citi Bikes to travel from Grand Central Station to their place of work and back.  
 
-!(Images/start_stations.png)
-!(Images/most_popular_start_stations.png)
-!(Images/end_stations.png)
-!(Images/most_popular_end_stations.png)
+![Citi-Bikes](Images/start_stations.png)
+![Citi-Bikes](Images/most_popular_start_stations.png)
+![Citi-Bikes](Images/end_stations.png)
+![Citi-Bikes](Images/most_popular_end_stations.png)
 
 ## Conclusion
 It is great to see that riders are finding value in the Citi Bike program. Ridership is increasing and there are many more subscribers who use the service annually and therefore take more trips than there are customers who purchase 24-hour or 3-day passes.
