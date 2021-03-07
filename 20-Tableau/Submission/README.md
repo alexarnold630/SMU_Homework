@@ -57,7 +57,7 @@ Peak hours show high spikes between 8am-9am and an even higher spike between 5pm
 ### Who are Citi Bike Riders?
 Citi Bike Subscribers, those who purchase an annual subscriber, are the majority users versus Citi Bike Customers, those who purchase 24-hour or 3-day passes.
 
-![Citi-Bikes](Images/rides_users.png)
+![Citi-Bikes](Images/rides_user.png)
 
 Males make up the overwhelming majority of Citi Bike users month over month.  What is interesting to note is that while makes make more trips, females actually ride longer on average than males. Females ride approximately 100 seconds, close to 2 minutes, longer than males.
 
